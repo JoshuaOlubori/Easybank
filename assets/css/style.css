@@ -1,0 +1,424 @@
+/*-----------------------------------*\ 
+  #style.css
+\*-----------------------------------*/
+
+/**
+ * copyright 2022 @codewithsadee 
+ */
+
+/*-----------------------------------*\ 
+  #CUSTOM PROPERTY
+\*-----------------------------------*/
+
+:root {
+  /**
+     * color
+     */
+
+  /* Primary */
+
+  --darkBlue: hsl(233, 26%, 24%);
+  --limeGreen: hsl(136, 65%, 51%);
+  --brightCyan: hsl(192, 70%, 51%);
+
+  /* Neutral */
+
+  --grayishBlue: hsl(233, 8%, 62%);
+  --lightGrayishBlue: hsl(220, 16%, 96%);
+  --veryLightGray: hsl(0, 0%, 98%);
+  --white: hsl(0, 0%, 100%);
+
+  --border-thin: black;
+  /* * typography 
+     */
+
+  --fs-base: 0.85rem;
+  --fs-big: 1.875rem;
+  --fs-biggish: 1.5rem;
+  /* --fs-3: 1.25rem;
+    --fs-4: 0.875rem;
+    --fs-5: 0.75rem; */
+  --button-border-radius: 1.5em;
+  /**
+     * spacing 
+     */
+
+  --ratio: 1.5;
+  --s-7: calc(var(--s-6) / var(--ratio));
+  --s-6: calc(var(--s-5) / var(--ratio));
+  --s-5: calc(var(--s-4) / var(--ratio));
+  --s-4: calc(var(--s-3) / var(--ratio));
+  --s-3: calc(var(--s-2) / var(--ratio));
+  --s-2: calc(var(--s-1) / var(--ratio));
+  --s-1: calc(var(--s0) / var(--ratio));
+  --s0: 1rem;
+  --s1: calc(var(--s0) * var(--ratio));
+  --s2: calc(var(--s1) * var(--ratio));
+  --s3: calc(var(--s2) * var(--ratio));
+  --s4: calc(var(--s3) * var(--ratio));
+  --s5: calc(var(--s4) * var(--ratio));
+  
+}
+
+/*-----------------------------------*\ 
+    #RESET
+  \*-----------------------------------*/
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a:link {
+  /* color: #1476b8; */
+  /* font-weight: bold; */
+  text-decoration: none;
+}
+a:visited {
+  /* color: #1430b8; */
+}
+a:hover {
+  text-decoration: underline;
+}
+a:active {
+  /* color: #b81414; */
+}
+
+li {
+  list-style: none;
+}
+
+img,
+button {
+  display: block;
+}
+
+a,
+span {
+  display: inline-block;
+}
+
+button {
+  font: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+html {
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: var(--fs-base); /* base font-size (0.85rem = 13.6px) */
+}
+
+body {
+  margin: 0;
+}
+:focus {
+  outline-offset: 4px;
+}
+
+/**
+   * scrollbar style
+   */
+
+::-webkit-scrollbar {
+  width: 16px;
+}
+
+::-webkit-scrollbar-thumb {
+  /* background: var(--accent); */
+  border-radius: 20px;
+  border: 4px solid;
+}
+
+/* .light-theme::-webkit-scrollbar-thumb { border-color: hsl(0, 0%, 90%); } */
+
+/* .light-theme::-webkit-scrollbar-track { background: hsl(0, 0%, 90%); } */
+
+/* STYLES */
+
+body {
+  padding: 0 2.5em;
+}
+
+/* Navigation Menu */
+
+.menu {
+  font-size: var(--fs-base);
+  z-index: 200;
+  position: sticky;
+}
+.menu-box {
+  /* ↓ Padding set to the first point on the modular scale */
+  padding: var(--s1);
+
+  color: var(--darkBlue);
+  background-color: var(--white);
+  /* border: black solid; */
+}
+
+.menu-box * {
+  /* ↓ Force colors to inherit from the parent
+  and honor inversion (below) */
+  color: inherit;
+}
+
+.menu-cluster {
+  /* ↓ Set the Flexbox context */
+  display: flex;
+  /* ↓ Enable wrapping */
+  flex-wrap: wrap;
+  /* ↓ Set the space/gap */
+  gap: var(--s-1, 1rem);
+  /* ↓ Choose your justification (flex-start is default) */
+  justify-content: space-between;
+  /* ↓ Choose your alignment (flex-start is default) */
+  align-items: center;
+}
+
+.menu-subcluster {
+  /* ↓ Set the Flexbox context */
+  display: flex;
+  /* ↓ Enable wrapping */
+  flex-wrap: wrap;
+  /* ↓ Set the space/gap */
+  gap: var(--s2, 1rem);
+  /* ↓ Choose your justification (flex-start is default) */
+  justify-content: center;
+  /* ↓ Choose your alignment (flex-start is default) */
+  align-items: center;
+}
+
+.ri {
+  background-color: var(--limeGreen);
+  /* padding: 1.04em 1.7em; */
+  padding: var(--s-1) var(--s2);
+  border-radius: var(--button-border-radius);
+  color: white;
+}
+
+.hamburger-icon {
+  display: none;
+}
+
+@media screen and (max-width: 752px) {
+  /* Navigation Menu (tablet and mobile screens) */
+
+  .menu {
+    font-size: var(--fs-base);
+  }
+  .menu-box {
+    /* ↓ Padding set to the first point on the modular scale */
+    padding: var(--s1);
+
+    color: var(--darkBlue);
+    background-color: var(--white);
+    /* border: black solid; */
+  }
+
+  .menu-box * {
+    /* ↓ Force colors to inherit from the parent
+    and honor inversion (below) */
+    color: inherit;
+  }
+
+  .menu-cluster {
+    /* ↓ Set the Flexbox context */
+    display: flex;
+
+    /* ↓ Set the space/gap */
+    gap: var(--s-1, 1rem);
+    /* ↓ Choose your justification (flex-start is default) */
+    justify-content: space-between;
+    /* ↓ Choose your alignment (flex-start is default) */
+    align-items: center;
+  }
+
+  .menu-subcluster {
+    /* ↓ Set the Flexbox context */
+    display: none;
+  }
+
+  .ri {
+    display: none;
+  }
+
+  .hamburger-icon {
+    display: inline-block;
+  }
+}
+
+.imposter-backdrop {
+  position: absolute;
+  /* ↓ Position the top left corner in the center */
+  inset-block-start: 50%;
+  inset-inline-start: 50%;
+  /* ↓ Reposition so the center of the element
+  is the center of the container */
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  height: 100vh;
+  z-index: 100;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  gap: var(--s3);
+
+  /* ↓ Include a unit, or the calc function will be invalid */
+  --margin: 0px;
+  /* ↓ Provide scrollbars so content is not obscured */
+  overflow: auto;
+  /* ↓ Restrict the height and width, including optional
+  spacing/margin between the element and positioning container */
+  max-inline-size: calc(100% - (var(--margin) * 2));
+  max-block-size: calc(100% - (var(--margin) * 2));
+}
+
+.imposter-body {
+  position: absolute;
+  /* ↓ Position the top left corner in the center */
+  inset-block-start: 34%;
+  inset-inline-start: 50%;
+  /* ↓ Reposition so the center of the element
+    is the center of the container */
+  transform: translate(-50%, -50%);
+  background-color: var(--veryLightGray);
+  width: 65%;
+  height: 41vh;
+  font-size: 1.3rem;
+  z-index: 100;
+  display: grid;
+  text-align: center;
+  align-content: center;
+  justify-content: center;
+  gap: var(--s1);
+  border-radius: var(--s-1);
+  /* ↓ Include a unit, or the calc function will be invalid */
+  --margin: 0px;
+  /* ↓ Provide scrollbars so content is not obscured */
+  overflow: auto;
+  /* ↓ Restrict the height and width, including optional
+    spacing/margin between the element and positioning container */
+  max-inline-size: calc(100% - (var(--margin) * 2));
+  max-block-size: calc(100% - (var(--margin) * 2));
+}
+
+.imposter-body > a > li {
+  color: black;
+}
+
+
+
+/* Hero Section */
+
+
+.hero-box {
+  background-color: var(--veryLightGray);
+}
+.hero-cluster {
+  /* ↓ Set the Flexbox context */
+  display: flex;
+  flex-direction: column;
+  /* ↓ Enable wrapping */
+  /* flex-wrap: wrap; */
+  /* ↓ Set the space/gap */
+  /* ↓ Choose your justification (flex-start is default) */
+  justify-content: start;
+  /* ↓ Choose your alignment (flex-start is default) */
+  align-items: center;
+}
+
+.hero-cluster  img {
+  width: 100%;
+  object-fit: cover;
+  padding-bottom: 2px;
+  position: relative;
+}
+
+.hero-stack {
+  /* ↓ The flex context */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-center;
+  align-items: center;
+  gap: var(--s-1);
+  padding: 0 var(--s2);
+  }
+  .hero-stack > * {
+  /* ↓ Any extant vertical margins are removed */
+  margin-block: 0;
+  }
+  .hero-stack > * + * {
+  /* ↓ Top margin is only applied to successive elements */
+  margin-block-start: var(--space, 1.5rem);
+  }
+
+  .hero-stack-text {
+text-align: center;
+color: var(--darkBlue);
+font-size: var(--fs-big);
+ z-index: 1; /* to appear over mockups at very small screens */
+  }
+  
+.hero-stack > p {
+  font-size: 1.3rem;
+  line-height: 1.5;
+  color: var(--grayishBlue);
+  text-align: center;
+}
+
+.hero-stack > button {
+  /* margin: 0 13em; */
+  align-self: center;
+  display: block;
+
+}
+
+.mockups-imposter {
+  position: absolute;
+  /* ↓ equivalent to `top` in horizontal-tb writing mode */
+  inset-block-start: 42%;
+  /* ↓ equivalent to `left` in horizontal-tb writing mode */
+  inset-inline-start: 50%;
+  transform: translate(-50%, -50%);
+  /* ↓ equivalent to `max-width` in horizontal-tb writing mode */
+  max-inline-size: 100%;
+  /* ↓ equivalent to `max-height` in horizontal-tb writing mode */
+  max-block-size: 100%;
+  
+}
+
+@media screen and (min-width: 768px) {
+  .hero-cluster {
+    /* ↓ Set the Flexbox context */
+    display: flex;
+    flex-direction: row-reverse;
+    /* ↓ Enable wrapping */
+    /* flex-wrap: wrap; */
+    /* ↓ Set the space/gap */
+    /* ↓ Choose your justification (flex-start is default) */
+    justify-content: start;
+    /* ↓ Choose your alignment (flex-start is default) */
+    align-items: center;
+  }
+
+
+  .mockups-imposter {
+    position: absolute;
+    /* ↓ equivalent to `top` in horizontal-tb writing mode */
+    inset-block-start: 42%;
+    /* ↓ equivalent to `left` in horizontal-tb writing mode */
+    inset-inline-start: 80%;
+    transform: translate(-50%, -50%);
+    /* ↓ equivalent to `max-width` in horizontal-tb writing mode */
+    max-inline-size: 100%;
+    /* ↓ equivalent to `max-height` in horizontal-tb writing mode */
+    max-block-size: 100%;
+    
+  }
+
+}
