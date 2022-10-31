@@ -1,0 +1,361 @@
+@charset "UTF-8";
+
+:root {
+  /**
+       * color
+       */
+
+  /* Primary */
+
+  --darkBlue: hsl(233, 26%, 24%);
+  --limeGreen: hsl(136, 65%, 51%);
+  --brightCyan: hsl(192, 70%, 51%);
+
+  /* Neutral */
+
+  --grayishBlue: hsl(233, 8%, 62%);
+  --lightGrayishBlue: hsl(220, 16%, 96%);
+  --veryLightGray: hsl(0, 0%, 98%);
+  --white: hsl(0, 0%, 100%);
+
+  --border-thin: black;
+  /* * typography 
+       */
+
+  --fs-base: 0.85rem;
+  --fs-big: 1.875rem;
+  --fs-biggish: 1.5rem;
+  /* --fs-3: 1.25rem;
+      --fs-4: 0.875rem;
+      --fs-5: 0.75rem; */
+  --button-border-radius: 1.5em;
+  /**
+       * spacing 
+       */
+
+  --ratio: 1.5;
+  --s-7: calc(var(--s-6) / var(--ratio));
+  --s-6: calc(var(--s-5) / var(--ratio));
+  --s-5: calc(var(--s-4) / var(--ratio));
+  --s-4: calc(var(--s-3) / var(--ratio));
+  --s-3: calc(var(--s-2) / var(--ratio));
+  --s-2: calc(var(--s-1) / var(--ratio));
+  --s-1: calc(var(--s0) / var(--ratio));
+  --s0: 1rem;
+  --s1: calc(var(--s0) * var(--ratio));
+  --s2: calc(var(--s1) * var(--ratio));
+  --s3: calc(var(--s2) * var(--ratio));
+  --s4: calc(var(--s3) * var(--ratio));
+  --s5: calc(var(--s4) * var(--ratio));
+}
+
+.btn {
+  min-width: 8rem;
+  border-radius: 100px;
+  border: transparent;
+  font-size: var(--s-1);
+}
+
+.btn-primary {
+  background: var(--limeGreen);
+  color: var(--white);
+  padding: 0.5rem 0.2rem;
+}
+
+.btn-primary:hover {
+  background: var(--darkBlue);
+  color: var(--white);
+}
+
+/* Base: font */
+body {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+/* Base: space */
+* {
+  margin: 0;
+  padding: 0;
+}
+/* Base: list */
+ul {
+  list-style: none;
+}
+/* Base: link */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+/* Base: image */
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
+/* GRID_A */
+.main-grid {
+  display: grid;
+  grid-template-columns: 30px auto 30px;
+  grid-template-rows: auto auto auto auto auto;
+  grid-template-areas:
+    ". header ."
+    "hero-image hero-image hero-image"
+    ". hero-text ."
+    ". choose ."
+    ". article ."
+    "footer footer footer";
+}
+
+.header {
+  grid-area: header;
+  position: fixed;
+  z-index: 50;
+  width: 100%;
+  box-shadow: 0.1em 0.2em 0.3em var(--limeGreen);
+
+}
+
+.hero-image {
+  grid-area: hero-image;
+}
+
+.hero-text {
+  grid-area: hero-text;
+}
+
+.choose {
+  grid-area: choose;
+}
+
+.article {
+  grid-area: article;
+}
+
+.footer {
+  grid-area: footer;
+}
+
+/* NAVIGATION MENU */
+.menu {
+  --space: 0.1rem;
+  /* ↓ Set the Flexbox context */
+  display: flex;
+  /* ↓ Enable wrapping */
+  flex-wrap: wrap;
+  /* ↓ Set the space/gap */
+  gap: var(--space, 1rem);
+  /* ↓ Choose your justification (flex-start is default) */
+  justify-content: space-between;
+  /* ↓ Choose your alignment (flex-start is default) */
+  align-items: center;
+
+  padding: var(--s1) 0;
+
+  font-size: var(--s-1);
+  background-color: var(--white);
+
+}
+
+.menu-subcluster {
+  --space: 6rem;
+  /* ↓ Set the Flexbox context */
+  display: flex;
+  /* ↓ Enable wrapping */
+  flex-wrap: wrap;
+  /* ↓ Set the space/gap */
+  gap: var(--space, 1rem);
+  /* ↓ Choose your justification (flex-start is default) */
+  justify-content: space-between;
+  /* ↓ Choose your alignment (flex-start is default) */
+  align-items: center;
+}
+
+@media (max-width: 1107px) {
+  .menu-subcluster {
+    gap: 4rem;
+  }
+}
+
+@media (min-width: 1671px) {
+  .menu-subcluster {
+    gap: 8rem;
+  }
+}
+
+@media (max-width: 941px) {
+  .menu-subcluster {
+    gap: 2rem;
+  }
+}
+
+/* hide hamburger container */
+.menu-button-container {
+  display: none;
+  height: 100%;
+  width: 30px;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: end;
+  align-items: end;
+}
+
+/* Hide toggler input */
+#menu-toggle {
+  display: none;
+}
+
+/* Create the hamburger */
+.menu-button,
+.menu-button::before,
+.menu-button::after {
+  display: block;
+  background-color: var(--darkBlue);
+  position: absolute;
+  height: 4px;
+  width: 30px;
+  transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  border-radius: 2px;
+}
+
+.menu-button::before {
+  content: "";
+  margin-top: -8px;
+}
+
+.menu-button::after {
+  content: "";
+  margin-top: 8px;
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::before {
+  margin-top: 0px;
+  transform: rotate(45deg);
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button {
+  background: rgba(255, 255, 255, 0);
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::after {
+  margin-top: 0px;
+  transform: rotate(-45deg);
+}
+
+@media (max-width: 700px) {
+  .menu-subcluster {
+    /* ↓ The flex context */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .menu-subcluster > * {
+    /* ↓ Any extant vertical margins are removed */
+    margin-block: 0;
+  }
+  .menu-subcluster > * + * {
+    /* ↓ Top margin is only applied to successive elements */
+    margin-block-start: var(--space, 1.5rem);
+  }
+
+  .cti {
+    display: none;
+  }
+  .menu-button-container {
+    display: flex;
+  }
+
+  .menu-subcluster {
+    position: absolute;
+    top: 0;
+    margin-top: 50px;
+    left: 0;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #menu-toggle ~ .menu-subcluster a {
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  #menu-toggle:checked ~ .menu-subcluster a {
+    /* border: 1px solid #333; */
+    height: 2.5em;
+    padding: 0.5em;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  .menu-subcluster > a {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0.5em 0;
+    width: 100%;
+    color: white;
+    background-color: #222;
+  }
+
+  .menu-subcluster > a:not(:last-child) {
+    border-bottom: 1px solid #444;
+  }
+}
+
+/* HERO SECTION */
+.hero-text {
+  /* ↓ The flex context */
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  z-index: 2;
+}
+.hero-text > * {
+  /* ↓ Any extant vertical margins are removed */
+  margin-block: 0;
+}
+.hero-text > * + * {
+  /* ↓ Top margin is only applied to successive elements */
+  margin-block-start: var(--space, 1.5rem);
+}
+.hero-text h1 {
+    
+    text-shadow: 0.1em 0.1em 0.3em var(--white);
+    color: var(--darkBlue);
+}
+
+.hero-text p {
+  text-align: center;
+}
+
+.hero-text button {
+  display: block;
+}
+
+.bg-mobile {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* POSITIONING MOCKUP IMAGES */
+.hero-image {
+    position: relative;
+   
+}
+
+.mockups {
+    position: absolute;
+    top: -100;
+ left: 0;
+ z-index: 1;
+
+}
