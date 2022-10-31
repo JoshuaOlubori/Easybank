@@ -47,19 +47,24 @@
   --s3: calc(var(--s2) * var(--ratio));
   --s4: calc(var(--s3) * var(--ratio));
   --s5: calc(var(--s4) * var(--ratio));
+
+  --lineHeight: 1.5
 }
 
 .btn {
-  min-width: 8rem;
+  /* min-width: 8.7rem; */
   border-radius: 100px;
   border: transparent;
-  font-size: var(--s-1);
+  font-size: 0.8rem;
+  padding: var(--s-1) var(--s2);
+  
 }
 
 .btn-primary {
   background: var(--limeGreen);
   color: var(--white);
-  padding: 0.5rem 0.2rem;
+  /* padding: 0.5rem 0.6rem; */
+  background: linear-gradient(45deg, var(--limeGreen),var(--brightCyan));
 }
 
 .btn-primary:hover {
@@ -123,6 +128,7 @@ img {
 .hero-text {
   grid-area: hero-text;
 }
+
 
 .choose {
   grid-area: choose;
@@ -316,6 +322,8 @@ img {
   justify-items: center;
   align-items: center;
   z-index: 2;
+  background-color: var(--veryLightGray);
+  padding-bottom: var(--s3);
 }
 .hero-text > * {
   /* ↓ Any extant vertical margins are removed */
@@ -326,17 +334,21 @@ img {
   margin-block-start: var(--space, 1.5rem);
 }
 .hero-text h1 {
-    
+    font-weight: 500;
+    font-size: 2.4rem;
     text-shadow: 0.1em 0.1em 0.3em var(--white);
     color: var(--darkBlue);
 }
 
 .hero-text p {
   text-align: center;
+  color: var(--grayishBlue);
+  line-height: var(--lineHeight);
 }
 
 .hero-text button {
   display: block;
+
 }
 
 .bg-mobile {
@@ -346,10 +358,22 @@ img {
   z-index: 1;
 }
 
+/* STYLING THE GUTTERS OF THE HERO-TEXT SECTION */
+.lgb-1{
+    grid-row: 3/4;
+    grid-column: 1/2;
+    background-color: var(--veryLightGray);
+}
+
+.lgb-2{
+    grid-row: 3/4;
+    grid-column: 3/4;
+    background-color: var(--veryLightGray);
+}
 /* POSITIONING MOCKUP IMAGES */
 .hero-image {
     position: relative;
-   
+    background-color: var(--lightGrayishBlue);
 }
 
 .mockups {
@@ -359,3 +383,115 @@ img {
  z-index: 1;
 
 }
+
+/* WHY-CHOOSE-US SECTION */
+
+.choose {
+    /* ↓ The flex context */
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    z-index: 2;
+    background-color: var(--lightGrayishBlue);
+  }
+  .choose > * {
+    /* ↓ Any extant vertical margins are removed */
+    margin-block: 0;
+  }
+  .choose > * + * {
+    /* ↓ Top margin is only applied to successive elements */
+    margin-block-start: var(--space, 1.5rem);
+  }
+
+  .choose-text {
+    /* ↓ The flex context */
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    z-index: 2;
+    background-color: var(--lightGrayishBlue);
+    text-align: center;
+    padding-top: var(--s3);
+  }
+  .choose-text > * {
+    /* ↓ Any extant vertical margins are removed */
+    margin-block: 0;
+  }
+  .choose-text > * + * {
+    /* ↓ Top margin is only applied to successive elements */
+    margin-block-start: var(--space, 1.5rem);
+  }
+
+.choose-text h1 {
+    color: var(--darkBlue);
+    font-size: var(--s2);
+    font-weight: 100;
+}
+
+.choose-text p {
+    color: var(--grayishBlue);
+    line-height: var(--lineHeight);
+}
+
+  .vlg-1{
+    grid-column: 3/4;
+    grid-row: 4/5;
+    background-color: var(--lightGrayishBlue);
+  }
+
+  .vlg-2{
+    grid-column: 1/2;
+    grid-row: 4/5;
+    background-color: var(--lightGrayishBlue);
+  }
+
+  /* CARDS STYLING USING STACK LAYOUT  */
+  .card-stack {
+    /* ↓ The flex context */
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    gap: 2rem;
+    margin-top: var(--s3);
+    }
+    .card-stack > * {
+    /* ↓ Any extant vertical margins are removed */
+    margin-block: 0;
+    }
+    .card-stack > * + * {
+    /* ↓ Top margin is only applied to successive elements */
+    /* margin-block-start: var(2rem); */
+    }
+    
+
+    .card {
+        /* ↓ The flex context */
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        align-items: center;
+        background-color: var(--lightGrayishBlue);
+        text-align: center;
+    
+      }
+      .card > * {
+        /* ↓ Any extant vertical margins are removed */
+        margin-block: 0;
+      }
+      .card > * + * {
+        /* ↓ Top margin is only applied to successive elements */
+        margin-block-start: var(--space, 1.5rem);
+      }
+
+      .card h1 {
+        color: var(--darkBlue);
+        font-size: var(--s1);
+        font-weight: normal;
+      }
+
+      .card p {
+        color: var(--grayishBlue);
+        line-height: var(--lineHeight);
+    }
