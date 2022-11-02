@@ -1,19 +1,9 @@
-/*-----------------------------------*\ 
-  #style.css
-\*-----------------------------------*/
-
-/**
- * copyright 2022 @codewithsadee 
- */
-
-/*-----------------------------------*\ 
-  #CUSTOM PROPERTY
-\*-----------------------------------*/
+@charset "UTF-8";
 
 :root {
   /**
-     * color
-     */
+       * color
+       */
 
   /* Primary */
 
@@ -30,20 +20,23 @@
 
   --border-thin: black;
   /* * typography 
-     */
+       */
 
   --fs-base: 0.85rem;
   --fs-big: 1.875rem;
   --fs-biggish: 1.5rem;
   /* --fs-3: 1.25rem;
-    --fs-4: 0.875rem;
-    --fs-5: 0.75rem; */
+      --fs-4: 0.875rem;
+      --fs-5: 0.75rem; */
   --button-border-radius: 1.5em;
   /**
-     * spacing 
-     */
+       * spacing 
+       */
 
   --ratio: 1.5;
+  --s-10: calc(var(--s-9) / var(--ratio));
+  --s-9: calc(var(--s-8) / var(--ratio));
+  --s-8: calc(var(--s-7) / var(--ratio));
   --s-7: calc(var(--s-6) / var(--ratio));
   --s-6: calc(var(--s-5) / var(--ratio));
   --s-5: calc(var(--s-4) / var(--ratio));
@@ -57,501 +50,847 @@
   --s3: calc(var(--s2) * var(--ratio));
   --s4: calc(var(--s3) * var(--ratio));
   --s5: calc(var(--s4) * var(--ratio));
-  
+  --s6: calc(var(--s5) * var(--ratio));
+  --s7: calc(var(--s6) * var(--ratio));
+
+  --lineHeight: 1.5;
 }
 
-/*-----------------------------------*\ 
-    #RESET
-  \*-----------------------------------*/
-
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-a:link {
-  /* color: #1476b8; */
-  /* font-weight: bold; */
-  text-decoration: none;
-}
-a:visited {
-  /* color: #1430b8; */
-}
-a:hover {
-  text-decoration: underline;
-}
-a:active {
-  /* color: #b81414; */
-}
-
-li {
-  list-style: none;
-}
-
-img,
-button {
-  display: block;
-}
-
-a,
-span {
-  display: inline-block;
-}
-
-button {
-  font: inherit;
-  border: none;
-  background: none;
-  cursor: pointer;
-}
-
-html {
-  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  font-size: var(--fs-base); /* base font-size (0.85rem = 13.6px) */
-}
-
-body {
-  margin: 0;
-}
-:focus {
-  outline-offset: 4px;
-}
-
-/**
-   * scrollbar style
-   */
-
+/* scrollbar style */
 ::-webkit-scrollbar {
-  width: 16px;
+  width: 12px;
 }
 
 ::-webkit-scrollbar-thumb {
-  /* background: var(--accent); */
+  background: linear-gradient(45deg, var(--brightCyan), var(--limeGreen));
   border-radius: 20px;
-  border: 4px solid;
+  border: 1px solid var(--darkBlue);
 }
 
-/* .light-theme::-webkit-scrollbar-thumb { border-color: hsl(0, 0%, 90%); } */
-
-/* .light-theme::-webkit-scrollbar-track { background: hsl(0, 0%, 90%); } */
-
-/* STYLES */
-
-body {
-  /* padding: 0 2.5em; */
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-}
-
-/* Navigation Menu */
-
-.menu {
-  font-size: var(--fs-base);
-  z-index: 200; 
-  position: fixed;
-   width: 100%; 
-  margin: auto;
-  box-shadow: 0px 5px 10px 0px var(--limeGreen);
-}
-
-.menu-box {
-  /* ↓ Padding set to the first point on the modular scale */
-  padding: var(--s1);
-width: auto;
-  color: var(--darkBlue);
-  background-color: var(--white);
-  /* border: black solid; */
-}
-
-.menu-box * {
-  /* ↓ Force colors to inherit from the parent
-  and honor inversion (below) */
-  color: inherit;
-}
-
-.menu-cluster {
-  /* ↓ Set the Flexbox context */
-  display: flex;
-  /* ↓ Enable wrapping */
-  flex-wrap: wrap;
-  /* ↓ Set the space/gap */
-  gap: var(--s-1, 1rem);
-  /* ↓ Choose your justification (flex-start is default) */
-  justify-content: space-between;
-  /* ↓ Choose your alignment (flex-start is default) */
- 
-  align-items: center;
-}
-
-.menu-subcluster {
-  /* ↓ Set the Flexbox context */
-  display: flex;
-  /* ↓ Enable wrapping */
-  flex-wrap: wrap;
-  /* ↓ Set the space/gap */
-  gap: var(--s3, 1rem);
-  /* ↓ Choose your justification (flex-start is default) */
-  justify-content: center;
-  /* ↓ Choose your alignment (flex-start is default) */
-  align-items: center;
-}
-
-.ri {
-  background-color: var(--limeGreen);
-  /* padding: 1.04em 1.7em; */
+.btn {
+  /* min-width: 8.7rem; */
+  border-radius: 100px;
+  border: transparent;
+  font-size: 0.8rem;
   padding: var(--s-1) var(--s2);
-  border-radius: var(--button-border-radius);
-  color: white;
-  /* margin-right: var(--s3); */
 }
 
-.hamburger-icon {
-  display: none;
+.btn-primary {
+  background: var(--limeGreen);
+  color: var(--white);
+  /* padding: 0.5rem 0.6rem; */
+  background: linear-gradient(45deg, var(--limeGreen), var(--brightCyan));
 }
 
+.btn-primary:hover {
+  opacity: 0.5;
+}
 
-/* NAVIGATION TOGGLING */
-.mobile-menu {
-  display: none;
-  flex-direction: row;
-  list-style-type: none;
+/* Base: font */
+body {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+/* Base: space */
+* {
   margin: 0;
   padding: 0;
 }
-
-.mobile-menu > li {
-  margin: 0 1rem;
-  overflow: hidden;
+/* Base: list */
+ul {
+  list-style: none;
+}
+/* Base: link */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+/* Base: image */
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
 }
 
-.menu-button-container {
-  display: none;
-  height: 100%;
-  width: 30px;
-  cursor: pointer;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+/* MAIN GRID */
+.main-grid {
+  display: grid;
+  grid-template-columns: 30px auto 30px;
+  grid-template-rows: auto auto auto auto auto;
+  grid-template-areas:
+    ". header ."
+    "hero-image hero-image hero-image"
+    ". hero-text ."
+    ". choose ."
+    ". article ."
+    "footer footer footer";
 }
 
-#menu-toggle {
-  display: none;
-}
-.menu-button,
-.menu-button::before,
-.menu-button::after {
-  display: block;
-  background-color: var(--darkBlue);
-  position: absolute;
-  height: 4px;
-  width: 30px;
-  transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
-  border-radius: 2px;
-}
-
-.menu-button::before {
-  content: "";
-  margin-top: -8px;
-}
-
-.menu-button::after {
-  content: "";
-  margin-top: 8px;
-}
-
-#menu-toggle:checked + .menu-button-container .menu-button::before {
-  margin-top: 0px;
-  transform: rotate(45deg);
-}
-
-#menu-toggle:checked + .menu-button-container .menu-button {
-  background: rgba(255, 255, 255, 0);
-}
-
-#menu-toggle:checked + .menu-button-container .menu-button::after {
-  margin-top: 0px;
-  transform: rotate(-45deg);
-}
-
-@media (max-width: 768px) {
-  .menu-button-container {
-    display: flex;
-  }
-
-  .mobile-menu {
-    display: flex;
-    position: absolute;
-    top: 0;
-    margin-top: 50px;
-    left: 0;
-    flex-direction: column;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-  }
-
-  #menu-toggle ~ .mobile-menu li {
-    height: 0;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
-  }
-
-  #menu-toggle:checked ~ .mobile-menu li {
-    border: 1px solid #333;
-    height: 2.5em;
-    padding: 0.5em;
-    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
-  }
-
-  .mobile-menu > li {
-    display: flex;
-    justify-content: center;
-    margin: 0;
-    padding: 0.5em 0;
-    width: 100%;
-    color: white;
-    background-color: #222;
-  }
-
-  .mobile-menu > li:not(:last-child) {
-    border-bottom: 1px solid #444;
-  }
-}
-/* mmmm */
-
-
-@media screen and (max-width: 768px) {
-  /* Navigation Menu (tablet and mobile screens) */
-
-  .menu {
-    font-size: var(--fs-base);
-  }
-  .menu-box {
-    /* ↓ Padding set to the first point on the modular scale */
-    padding: var(--s1);
-
-    color: var(--darkBlue);
-    background-color: var(--white);
-    /* border: black solid; */
-  }
-
-  .menu-box * {
-    /* ↓ Force colors to inherit from the parent
-    and honor inversion (below) */
-    color: inherit;
-  }
-
-  .menu-cluster {
-    /* ↓ Set the Flexbox context */
-    display: flex;
-
-    /* ↓ Set the space/gap */
-    gap: var(--s-1, 1rem);
-    /* ↓ Choose your justification (flex-start is default) */
-    justify-content: space-between;
-    /* ↓ Choose your alignment (flex-start is default) */
-    align-items: center;
-  }
-
-  .menu-subcluster {
-    /* ↓ Set the Flexbox context */
-    display: none;
-  }
-
-  .ri {
-    display: none;
-  }
-
-  .hamburger-icon {
-    /* display: inline-block; */
-  }
-}
-
-.imposter-backdrop {
-  position: absolute;
-  /* ↓ Position the top left corner in the center */
-  inset-block-start: 50%;
-  inset-inline-start: 50%;
-  /* ↓ Reposition so the center of the element
-  is the center of the container */
-  transform: translate(-50%, -50%);
-  background-color: rgba(0, 0, 0, 0.8);
+.header {
+  grid-area: header;
+  position: fixed;
+  z-index: 50;
   width: 100%;
-  height: 100vh;
-  /* z-index: 100; */
-  display: grid;
-  align-content: center;
-  justify-content: center;
-  gap: var(--s3);
-
-  /* ↓ Include a unit, or the calc function will be invalid */
-  --margin: 0px;
-  /* ↓ Provide scrollbars so content is not obscured */
-  overflow: auto;
-  /* ↓ Restrict the height and width, including optional
-  spacing/margin between the element and positioning container */
-  max-inline-size: calc(100% - (var(--margin) * 2));
-  max-block-size: calc(100% - (var(--margin) * 2));
+  box-shadow: 0.1em 0.2em 0.3em var(--limeGreen);
 }
 
-.imposter-body {
-  position: absolute;
-  /* ↓ Position the top left corner in the center */
-  inset-block-start: 34%;
-  inset-inline-start: 50%;
-  /* ↓ Reposition so the center of the element
-    is the center of the container */
-  transform: translate(-50%, -50%);
-  background-color: var(--veryLightGray);
-  width: 65%;
-  height: 41vh;
-  font-size: 1.3rem;
-  /* z-index: 100; */
-  display: grid;
-  text-align: center;
-  align-content: center;
-  justify-content: center;
-  gap: var(--s1);
-  border-radius: var(--s-1);
-  /* ↓ Include a unit, or the calc function will be invalid */
-  --margin: 0px;
-  /* ↓ Provide scrollbars so content is not obscured */
-  overflow: auto;
-  /* ↓ Restrict the height and width, including optional
-    spacing/margin between the element and positioning container */
-  max-inline-size: calc(100% - (var(--margin) * 2));
-  max-block-size: calc(100% - (var(--margin) * 2));
+.hero-image {
+  grid-area: hero-image;
 }
 
-.imposter-body > a > li {
-  color: black;
+.hero-text {
+  grid-area: hero-text;
 }
 
-
-
-/* Hero Section */
-
-
-.hero-box {
-  background-color: var(--veryLightGray);
+.choose {
+  grid-area: choose;
 }
-.hero-cluster {
-  /* ↓ Set the Flexbox context */
+
+.article {
+  grid-area: article;
+}
+
+.footer {
+  grid-area: footer;
+}
+
+/* NAVIGATION MENU */
+
+nav {
   display: flex;
-  flex-direction: column;
-  /* ↓ Enable wrapping */
-  /* flex-wrap: wrap; */
-  /* ↓ Set the space/gap */
-  /* ↓ Choose your justification (flex-start is default) */
-  justify-content: start;
-  /* ↓ Choose your alignment (flex-start is default) */
+
+  gap: 1rem;
+  justify-content: space-between;
   align-items: center;
+  padding: 1rem 0;
+  font-size: var(--s-1);
+  background-color: white;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.hero-cluster  img {
-  width: 100%;
-  object-fit: cover;
-  padding-bottom: 2px;
-  position: relative;
+nav .white {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
 }
 
-.hero-stack {
+nav .mainMenu li a {
+  display: inline-block;
+  padding: var(--s-2);
+  text-decoration: none;
+  color: var(--grayishBlue);
+}
+
+nav .mainMenu li a:hover {
+  text-decoration: underline var(--limeGreen);
+  color: var(--darkBlue);
+}
+
+nav .openMenu {
+  cursor: pointer;
+  display: none;
+}
+
+nav .mainMenu .closeMenu {
+  display: none;
+  cursor: pointer;
+}
+
+@media (max-width: 800px) {
+  nav .mainMenu {
+    height: 80vh;
+    position: fixed;
+    margin-top: 3.3rem;
+    right: 0;
+    left: 0;
+    z-index: 100;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(180deg, black, transparent);
+    transition: top 0.5s ease;
+    display: none;
+    font-size: 1rem;
+  }
+
+  nav .mainMenu .closeMenu {
+    display: block;
+    position: absolute;
+    top: -38px;
+    right: 0px;
+    background-color: white;
+    padding: 0px 4px;
+  }
+
+  .white {
+    margin-bottom: 10rem;
+    background-color: white;
+    padding: 5vh 38vw;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    align-items: center;
+    color: var(--darkBlue);
+  }
+
+  nav .openMenu {
+    display: block;
+  }
+
+  nav .mainMenu li a {
+    color: var(--darkBlue);
+  }
+
+  nav .mainMenu li a:hover {
+    text-decoration: underline var(--limeGreen);
+    color: var(--darkBlue);
+  }
+
+  nav button {
+    display: none;
+  }
+}
+
+/* HERO SECTION */
+
+.hero-text {
   /* ↓ The flex context */
   display: flex;
   flex-direction: column;
-  justify-content: flex-center;
+  justify-items: center;
   align-items: center;
-  gap: var(--s-1);
-  padding: 0 var(--s2);
+  background-color: var(--veryLightGray);
+  padding-bottom: var(--s3);
+  padding-top: var(--s4);
+  text-align: center;
+}
+
+@media (max-width: 361px) {
+  .hero-text {
+    padding-bottom: var(--s3);
+    padding-top: var(--s-1);
   }
-  .hero-stack > * {
+}
+.hero-text > * {
   /* ↓ Any extant vertical margins are removed */
   margin-block: 0;
-  }
-  .hero-stack > * + * {
+}
+.hero-text > * + * {
   /* ↓ Top margin is only applied to successive elements */
   margin-block-start: var(--space, 1.5rem);
-  }
+}
+.hero-text h1 {
+  font-weight: 500;
+  font-size: 2.4rem;
+  text-shadow: 0.1em 0.1em 0.3em var(--white);
+  color: var(--darkBlue);
+  z-index: 2;
+}
 
-  .hero-stack-text {
-text-align: center;
-color: var(--darkBlue);
-font-size: var(--fs-big);
- /* z-index: 1; to appear over mockups at very small screens */
-  }
-  
-.hero-stack > p {
-  font-size: 1.3rem;
-  line-height: 1.5;
+.hero-text p {
   color: var(--grayishBlue);
-  text-align: center;
-  /* z-index: 1; */
+  line-height: var(--lineHeight);
+  z-index: 2;
+  text-shadow: 0.1em 0.1em 0.3em var(--white);
 }
 
-@media screen and (min-width: 768px) {
-  .hero-stack > p {
-    
-    text-align: left;
-    
-   
-  }
-   
-}
-
-.hero-stack > button {
-  /* margin: 0 13em; */
-  align-self: center;
+.hero-text button {
   display: block;
-
 }
 
-.mockups-imposter {
+.bg-mobile {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.bg-desktop {
+  display: none;
+}
+
+/* STYLING THE GUTTERS OF THE HERO-TEXT SECTION */
+.lgb-1 {
+  grid-row: 3/4;
+  grid-column: 1/2;
+  background-color: var(--veryLightGray);
+}
+
+.lgb-2 {
+  grid-row: 3/4;
+  grid-column: 3/4;
+  background-color: var(--veryLightGray);
+}
+/* POSITIONING MOCKUP IMAGES */
+.hero-image {
+  position: relative;
+  background-color: var(--veryLightGray);
+}
+
+@media (min-width: 891px) and (max-width: 1023px) {
+  .hero-image {
+    margin-bottom: -10rem;
+  }
+}
+
+.mockups {
   position: absolute;
-  /* ↓ equivalent to `top` in horizontal-tb writing mode */
-  inset-block-start: 42%;
-  /* ↓ equivalent to `left` in horizontal-tb writing mode */
-  inset-inline-start: 50%;
-  transform: translate(-50%, -50%);
-  /* ↓ equivalent to `max-width` in horizontal-tb writing mode */
-  max-inline-size: 100%;
-  /* ↓ equivalent to `max-height` in horizontal-tb writing mode */
-  max-block-size: 100%;
-  
+  top: -100;
+  left: 0;
+  z-index: 1;
 }
 
-@media screen and (min-width: 768px) {
-  .hero-cluster {
-    /* ↓ Set the Flexbox context */
+@media (min-width: 766px) and (max-width: 1023px) {
+  .mockups {
+    left: 8%;
+  }
+}
+/* Adjusting the mockup placement on smaller screens*/
+@media (max-width: 360px) {
+  .mockups {
+    top: -50;
+  }
+}
+
+@media (min-width: 364px) {
+  .hero-text {
+    padding-top: var(--s-3);
+  }
+}
+
+/* WHY-CHOOSE-US SECTION */
+
+.choose {
+  /* ↓ The flex context */
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  z-index: 2;
+  background-color: var(--lightGrayishBlue);
+}
+.choose > * {
+  /* ↓ Any extant vertical margins are removed */
+  margin-block: 0;
+}
+.choose > * + * {
+  /* ↓ Top margin is only applied to successive elements */
+  margin-block-start: var(--space, 1.5rem);
+}
+
+.choose-text {
+  /* ↓ The flex context */
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  z-index: 2;
+  background-color: var(--lightGrayishBlue);
+  text-align: center;
+  padding-top: var(--s3);
+}
+.choose-text > * {
+  /* ↓ Any extant vertical margins are removed */
+  margin-block: 0;
+}
+.choose-text > * + * {
+  /* ↓ Top margin is only applied to successive elements */
+  margin-block-start: var(--space, 1.5rem);
+}
+
+.choose-text h1 {
+  color: var(--darkBlue);
+  font-size: var(--s2);
+  font-weight: 100;
+}
+
+.choose-text p {
+  color: var(--grayishBlue);
+  line-height: var(--lineHeight);
+}
+
+.vlg-1 {
+  grid-column: 3/4;
+  grid-row: 4/5;
+  background-color: var(--lightGrayishBlue);
+}
+
+.vlg-2 {
+  grid-column: 1/2;
+  grid-row: 4/5;
+  background-color: var(--lightGrayishBlue);
+}
+
+/* CARDS STYLING USING STACK LAYOUT  */
+.card-stack {
+  /* ↓ The flex context */
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  gap: 2rem;
+  margin-top: var(--s3);
+  padding-bottom: var(--s4);
+}
+.card-stack > * {
+  /* ↓ Any extant vertical margins are removed */
+  margin-block: 0;
+}
+.card-stack > * + * {
+  margin-block-start: var(--s1);
+}
+
+@media (min-width: 711px) {
+  .card-stack > * + * {
+    margin-block-start: var(--s2);
+  }
+}
+
+.card {
+  /* ↓ The flex context */
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  background-color: var(--lightGrayishBlue);
+  text-align: center;
+}
+.card > * {
+  /* ↓ Any extant vertical margins are removed */
+  margin-block: 0;
+}
+.card > * + * {
+  /* ↓ Top margin is only applied to successive elements */
+  margin-block-start: var(--space, 1.5rem);
+}
+
+.card h1 {
+  color: var(--darkBlue);
+  font-size: var(--s1);
+  font-weight: normal;
+}
+
+.card p {
+  color: var(--grayishBlue);
+  line-height: var(--lineHeight);
+}
+
+/* ARTICLE SECTION */
+
+.article {
+  background-color: var(--veryLightGray);
+  padding-top: var(--s4);
+}
+
+/* .article-stack {
+  background-color: var(--veryLightGray);
+} */
+
+.vlg-3 {
+  grid-row: 5/6;
+  grid-column: 1/2;
+  background-color: var(--veryLightGray);
+}
+
+.vlg-4 {
+  grid-row: 5/6;
+  grid-column: 3/4;
+  background-color: var(--veryLightGray);
+}
+
+.article > h1 {
+  color: var(--darkBlue);
+  font-size: var(--s2);
+  font-weight: 100;
+  text-align: center;
+}
+.article-card {
+  /* ↓ The flex context */
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  /* ↓ Any extant vertical margins are removed */
+  margin-block: 0;
+  /* ↓ Top margin is only applied to successive elements */
+  margin-block-start: var(--space, 1.5rem);
+  background-color: var(--white);
+  padding-bottom: var(--s2);
+  border-radius: 0 0 var(--s-3) var(--s-3);
+}
+
+.article-card-text {
+  display: flex;
+  flex-direction: column;
+  margin-top: var(--s1);
+  gap: var(--s0);
+  padding: 0 var(--s1);
+}
+
+.article-card-text > small {
+  color: var(--grayishBlue);
+  line-height: var(--lineHeight);
+}
+
+.article-card-text > h1 {
+  color: var(--darkBlue);
+  font-weight: 100;
+  font-size: 1.2rem;
+  letter-spacing: 0em;
+}
+
+.article-card-text > p {
+  color: var(--grayishBlue);
+  line-height: var(--lineHeight);
+  font-size: 0.9rem;
+  font-weight: 100;
+}
+.article-frame {
+  --n: 16; /* numerator */
+  --d: 9; /* denominator */
+  aspect-ratio: var(--n) / var(--d);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--s-2) var(--s-2) 0 0;
+}
+
+.bg-mobile {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+}
+
+/* FOOTER */
+.footer {
+  background-color: var(--darkBlue);
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: var(--s2) 0;
+}
+
+.footer > * {
+  /* ↓ Any extant vertical margins are removed */
+  margin-block: 0;
+}
+.footer > * + * {
+  /* ↓ Top margin is only applied to successive elements */
+  margin-block-start: var(--space, 1.5rem);
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--s1);
+}
+
+.footer-nav {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  gap: 1.18rem;
+  font-size: 0.8rem;
+  color: var(--grayishBlue);
+}
+
+.mini-flex-1,
+.mini-flex-2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--s1);
+}
+
+.footer p {
+  color: var(--grayishBlue);
+  font-size: 0.8rem;
+}
+.footer-nav > * {
+  /* ↓ Any extant vertical margins are removed */
+  margin-block: 0;
+}
+
+.mini-flex-1 p:hover,
+.mini-flex-2 p:hover {
+  color: var(--limeGreen);
+}
+
+/* LAYOUT AT DESKTOP  */
+@media (min-width: 1024px) {
+  .main-grid {
+    display: grid;
+    grid-template-columns: 1fr 537px 537px 1fr;
+    grid-template-rows: auto 700px auto auto auto;
+    grid-template-areas:
+      ". header header ."
+      ". hero-text hero-image hero-image"
+      ". choose choose ."
+      ". article article ."
+      ". footer footer .";
+  }
+
+  .header {
+    grid-area: header;
+  }
+
+  .hero-text {
+    grid-area: hero-text;
     display: flex;
-    flex-direction: row-reverse;
-    /* ↓ Enable wrapping */
-    /* flex-wrap: wrap; */
-    /* ↓ Set the space/gap */
+    flex-direction: column;
+    justify-items: flex-start;
+    align-items: flex-start;
+    background-color: var(--veryLightGray);
+    padding-bottom: var(--s3);
+    padding-top: var(--s6);
+    margin-top: var(--s3);
+  }
+
+  .hero-text > * {
+    /* ↓ Any extant vertical margins are removed */
+    margin-block: 0;
+  }
+  .hero-text > * + * {
+    /* ↓ Top margin is only applied to successive elements */
+    margin-block-start: var(--space, 1.5rem);
+  }
+  .hero-text h1 {
+    font-weight: 500;
+    font-size: 2.4rem;
+    text-align: justify;
+    text-shadow: 0.1em 0.1em 0.3em var(--white);
+    color: var(--darkBlue);
+    z-index: 2;
+  }
+
+  .hero-text p {
+    color: var(--grayishBlue);
+    line-height: var(--lineHeight);
+    z-index: 2;
+    text-align: justify;
+    text-shadow: 0.1em 0.1em 0.3em var(--white);
+  }
+
+  .bg-mobile {
+    display: none;
+  }
+
+  .bg-desktop {
+    display: block;
+    width: 100%;
+    bottom: 20%;
+    left: 10%;
+    overflow: hidden;
+  }
+
+  .mockups {
+    display: block;
+    /* position: absolute;
+    bottom: 50%;
+ left: 50%;
+ z-index: 20; */
+  }
+
+  .hero-image {
+    grid-area: hero-image;
+    position: relative;
+    z-index: 3;
+  }
+
+  .lgb-1 {
+    grid-row: 2/3;
+    grid-column: 1/2;
+  }
+
+  .choose {
+    grid-area: choose;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .card-stack {
+    display: flex;
+    flex-direction: row;
+    gap: var(--space, 1rem);
     /* ↓ Choose your justification (flex-start is default) */
-    justify-content: start;
+    justify-content: center;
     /* ↓ Choose your alignment (flex-start is default) */
     align-items: center;
   }
 
-
-  .mockups-imposter {
-    position: stat;
-    /* ↓ equivalent to `top` in horizontal-tb writing mode */
-    inset-block-start: 42%;
-    /* ↓ equivalent to `left` in horizontal-tb writing mode */
-    inset-inline-start: 80%;
-    transform: translate(-50%, -50%);
-    /* ↓ equivalent to `max-width` in horizontal-tb writing mode */
-    max-inline-size: 100%;
-    /* ↓ equivalent to `max-height` in horizontal-tb writing mode */
-    max-block-size: 100%;
-    
+  .card-stack > * {
+    /* ↓ Any extant vertical margins are removed */
+    margin-block: 0;
   }
 
+  /*  */
+
+  .card {
+    /* ↓ The flex context */
+    display: flex;
+    flex-direction: column;
+    justify-items: flex-start;
+    align-items: flex-start;
+    background-color: var(--lightGrayishBlue);
+    text-align: start;
+  }
+  .card > * {
+    /* ↓ Any extant vertical margins are removed */
+    margin-block: 0;
+  }
+  .card > * + * {
+    /* ↓ Top margin is only applied to successive elements */
+    margin-block-start: var(--space, 1.5rem);
+  }
+
+  .card h1 {
+    color: var(--darkBlue);
+    font-size: var(--s1);
+    font-weight: normal;
+  }
+
+  .card p {
+    color: var(--grayishBlue);
+    line-height: var(--lineHeight);
+  }
+
+  .choose-text {
+    /* ↓ The flex context */
+    display: flex;
+    flex-direction: column;
+    justify-items: flex-start;
+    align-items: flex-start;
+    z-index: 2;
+    background-color: var(--lightGrayishBlue);
+    text-align: start;
+    padding-top: var(--s3);
+  }
+  .choose-text > * {
+    /* ↓ Any extant vertical margins are removed */
+    margin-block: 0;
+  }
+  .choose-text > * + * {
+    /* ↓ Top margin is only applied to successive elements */
+    margin-block-start: var(--space, 1.5rem);
+  }
+
+  .choose-text h1 {
+    color: var(--darkBlue);
+    font-size: var(--s2);
+    font-weight: 100;
+  }
+
+  .choose-text p {
+    color: var(--grayishBlue);
+    line-height: var(--lineHeight);
+  }
+
+  /*  */
+
+  .vlg-1 {
+    grid-row: 3/4;
+    grid-column: 1/2;
+  }
+
+  .vlg-2 {
+    grid-row: 3/4;
+    grid-column: 4/5;
+  }
+
+  .article {
+    grid-area: article;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: var(--s3);
+    padding-bottom: var(--s4);
+  }
+
+  .article-stack {
+    display: flex;
+    flex-direction: row;
+    gap: var(--space, 1rem);
+    /* ↓ Choose your justification (flex-start is default) */
+    justify-content: center;
+    /* ↓ Choose your alignment (flex-start is default) */
+    align-items: center;
+  }
+
+  .article-stack > * {
+    /* ↓ Any extant vertical margins are removed */
+    margin-block: 0;
+    align-self: self-start;
+  }
+
+  .vlg-3 {
+    grid-row: 4/5;
+    grid-column: 1/2;
+  }
+
+  .vlg-4 {
+    grid-row: 4/5;
+    grid-column: 4/5;
+  }
+
+  .footer {
+    grid-area: footer;
+  }
+
+  .db-3 {
+    grid-row: -1/-2;
+    grid-column: 1/2;
+    background-color: var(--darkBlue);
+  }
+
+  .db-4 {
+    grid-row: -1/-2;
+    grid-column: -1/-2;
+    background-color: var(--darkBlue);
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .footer-logo {
+    grid-row: 1/2;
+    grid-column: 1/2;
+  }
+
+  .socials {
+    grid-row: 2/3;
+    grid-column: 1/2;
+  }
+
+  .footer-nav {
+    grid-row: 1/3;
+    grid-column: 2/4;
+    flex-direction: row;
+    gap: var(--s5);
+    padding-left: var(--s5);
+  }
+
+  .mini-flex-1,
+  .mini-flex-2 {
+    align-items: flex-start;
+  }
+
+  .cti-footer {
+    grid-row: 1/2;
+    grid-column: 5/6;
+  }
+
+  .copyright {
+    grid-row: 2/3;
+    grid-column: 5/6;
+  }
 }
