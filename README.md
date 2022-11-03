@@ -1,6 +1,6 @@
 # Frontend Mentor - Easybank landing page solution
 
-### Novemmber 2, 2022
+### November 2, 2022
 
 This is my solution to the [Easybank landing page challenge on Frontend
 Mentor](https://www.frontendmentor.io/challenges/easybank-landing-page-WaUhkoDN). Frontend Mentor challenges help you
@@ -34,8 +34,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Add solution URL here](https://github.com/JoshuaOlubori/Easybank/)
+- Live Site URL: [Add live site URL here](https://joshuaolubori.github.io/Easybank/)
 
 ## My process
 
@@ -166,9 +166,9 @@ Also, I should employ React going forward.
 ## Author
 
 - Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/JoshuaOlubori)
+- Twitter - [@yourusername](https://twitter.com/joshua_olubori)
 
-- Linkedin - [@joshua_olubori](https://www.twitter.com/joshua_olubori)
+- Linkedin - [@joshua_olubori](https://www.linkedin.com/in/joshua-edun/)
 
-- Github - [@joshua_olubori](https://www.github.com/joshua_olubori)
+- Github - [@joshua_olubori](https://www.github.com/JoshuaOlubori)
