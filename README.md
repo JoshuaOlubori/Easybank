@@ -34,8 +34,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/JoshuaOlubori/Easybank/)
-- Live Site URL: [Add live site URL here](https://joshuaolubori.github.io/Easybank/)
+- Solution URL: [](https://github.com/JoshuaOlubori/Easybank/)
+- Live Site URL: [](https://joshuaolubori.github.io/Easybank/)
 
 ## My process
 
@@ -165,10 +165,9 @@ Also, I should employ React going forward.
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/JoshuaOlubori)
-- Twitter - [@yourusername](https://twitter.com/joshua_olubori)
+- Frontend Mentor - [@JoshuaOlubori](https://www.frontendmentor.io/profile/JoshuaOlubori)
+- Twitter - [@joshua_olubori](https://twitter.com/joshua_olubori)
 
-- Linkedin - [@joshua_olubori](https://www.linkedin.com/in/joshua-edun/)
+- Linkedin - [@joshua-edun](https://www.linkedin.com/in/joshua-edun/)
 
-- Github - [@joshua_olubori](https://www.github.com/JoshuaOlubori)
+- Github - [@JoshuaOlubori](https://www.github.com/JoshuaOlubori)
