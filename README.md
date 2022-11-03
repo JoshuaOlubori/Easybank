@@ -62,7 +62,7 @@ divs that are direct children of the grid parent like this:
 <div class="lgb-2"></div>
 ```
 
-Heydon Pickering & Andy Bell's book ~Every Layout~ heavily influenced my approach to design. For example, I used a
+Heydon Pickering & Andy Bell's book Every Layout heavily influenced my approach to design. For example, I used a
 modular scale for most spacings as espoused in his book to maximize visual harmony
 
 ```css
