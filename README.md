@@ -34,8 +34,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [](https://github.com/JoshuaOlubori/Easybank/)
-- Live Site URL: [](https://joshuaolubori.github.io/Easybank/)
+- Solution URL: [https://github.com/JoshuaOlubori/Easybank/](https://github.com/JoshuaOlubori/Easybank/)
+- Live Site URL: [https://joshuaolubori.github.io/Easybank/](https://joshuaolubori.github.io/Easybank/)
 
 ## My process
 
